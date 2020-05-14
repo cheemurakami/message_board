@@ -1,1 +1,13 @@
-<h1>Hello World</h1>
+<h1>Open Boards</h1>
+
+<% if @boards.any? %>
+  <ul>
+    <% @boards.each do |board|%>
+        <li><%= board.name%> </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h4>There are currently no board to display.</h4>
+<% end %>
+
+<a href="/boards/new"> Add a new board </a>
