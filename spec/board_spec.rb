@@ -3,6 +3,11 @@ require "pry"
 require "board"
 
 describe ("#Board") do
+
+  before(:each) do
+    Board.clear()
+  end
+
   describe ("initialize") do
     it("creates a new board with a name") do
       board1 = Board.new({:name => "kiwi", :id => nil})
@@ -27,6 +32,21 @@ describe ("#Board") do
     end
   end
 
-  
+  describe(".clear") do
+    it ("cleans all boards") do
+    board1 = Board.new({:name => "kiwi", :id => nil})
+    board1.save()
+    Board.clear
+    expect(Board.all).to eq([])
+    end
+  end
+
+  describe(".find") do
+    it("finds a board by id")do
+    board1 = Board.new({:name => "kiwi", :id => nil})
+    board1.save()
+    expect(Board.find(board1.id)).to eq(board1)
+    end
+  end
 
 end

@@ -21,4 +21,13 @@ class Board
     @@boards.values
   end
 
+  def self.clear
+    @@boards = {}
+    @@total_rows = 0
+  end
+
+  def self.find(id)
+    @@boards[id]
+  end
+
 end
