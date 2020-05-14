@@ -31,9 +31,14 @@ post ('/boards') do
   redirect to ('/boards')
 end
 
+get('/boards/:id/edit') do
+  @board = Board.find(params[:id].to_i)
+  erb(:edit_board)
+end
+
 patch('/boards/:id') do
   @board = Board.find(params[:id].to_i)
-  @board.update(params[:])
+  @board.update(params[:name])
   erb(:boards)
 end
 

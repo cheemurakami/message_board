@@ -34,6 +34,10 @@ class Board
     @@boards.delete(self.id)
   end
 
+  def update(name)
+    @name = name
+  end
+
 
   
 
