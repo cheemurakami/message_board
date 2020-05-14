@@ -1,0 +1,7 @@
+<h1>Update <%= @board.name %></h1>
+
+<form action="/boards <%= @board.id %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submite">Delete board</button>
+</form>

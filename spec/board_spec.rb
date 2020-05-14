@@ -49,4 +49,15 @@ describe ("#Board") do
     end
   end
 
+  describe("#delete") do
+    it ("deletes a board by id")do
+    board1 = Board.new({:name => "kiwi", :id => nil})
+    board1.save()
+    board2 = Board.new({:name => "chee", :id => nil})
+    board2.save()
+    board1.delete
+    expect(Board.all).to eq([board2])
+    end
+  end
+
 end

@@ -18,14 +18,28 @@ get ('/boards/new') do
 end
 
 get ('/boards/:id') do
-  'this route will show a specific board based on its id. The value of ID here is #{params[:id]}.'
+  @board = Board.find(params[:id].to_i) #by clicking li tag which has id
+  @boards = Board.all
+  erb(:board)
 end
 
 post ('/boards') do
-  'this route will add a board to out list'
   name = params[:board_name]
   board = Board.new({:name => name, :id => nil})
   board.save
   # @boards = Board.all
   redirect to ('/boards')
+end
+
+patch('/boards/:id') do
+  @board = Board.find(params[:id].to_i)
+  @board.update(params[:])
+  erb(:boards)
+end
+
+
+delete('/boards/:id') do
+  board = Board.find(params[:id].to_i)
+  board.delete
+  redirect to ('boards')
 end

@@ -30,4 +30,12 @@ class Board
     @@boards[id]
   end
 
+  def delete
+    @@boards.delete(self.id)
+  end
+
+
+  
+
+
 end
