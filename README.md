@@ -1,6 +1,7 @@
-# _Anagrams and Antigrams_
+# _Message Board_
 
 https://github.com/cheemurakami/message_board
+https://morning-coast-81275.herokuapp.com/
 
 #### Ruby for Epicodus, _05/14/2020_
 
@@ -13,8 +14,8 @@ This is a simple message board website using Ruby.
 
 |  Behavior                 |  Input  | Output
 |---------------------------|---------|-------
-| **Spec 1: Creats new instance for a board **| **** | ****
-| **Spec 2:  **| **** | ****
+| **Spec 1: Creats new instance for a board** | **methods** |
+
 
 
 ## Setup/Installation Requirements
