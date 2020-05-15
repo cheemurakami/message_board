@@ -10,7 +10,7 @@
 </form>
 
 <%# deleting %>
-<form action="/boards <%= @board.id %>" method="post">
+<form action="/boards/<%= @board.id %>" method="post">
   <input name="_method" type="hidden" value="delete">
   <button type="submite">Delete board</button>
 </form>

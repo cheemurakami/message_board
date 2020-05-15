@@ -17,6 +17,13 @@ get('/boards/new') do
   erb(:new_board)
 end
 
+patch('/boards/:id') do
+  @board = Board.find(params[:id].to_i)
+  @board.update(params[:name])
+  @boards = Board.all
+  erb(:board)
+end
+
 get('/boards/:id') do
   @board = Board.find(params[:id].to_i) #by clicking li tag which has id
   @boards = Board.all
@@ -36,16 +43,14 @@ get('/boards/:id/edit') do
   erb(:edit_board)
 end
 
-patch('/boards/:id') do
-  @board = Board.find(params[:id].to_i)
-  @board.update(params[:name])
-  @boards = Board.all
-  erb(:board)
-end
 
 
 delete('/boards/:id') do
-  board = Board.find(params[:id].to_i)
-  board.delete
-  redirect to ('/boards')
+  @board = Board.find(params[:id].to_i)
+  @board.delete
+  # redirect to ('/boards')
+  @boards = Board.all
+  erb(:boards)
 end
+
+#boards%201
